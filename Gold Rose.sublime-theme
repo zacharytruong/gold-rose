@@ -1,8 +1,12 @@
 {
-  // Inherit GitHub Theme's full UI + file-type / symbol icons.
-  // Colors flow from the Gold Rose color scheme, which exports
-  // --background (#1a1416), --foreground (#e6bfa8) and --accent (#B76E79).
-  "extends": "GitHub Adaptive.sublime-theme",
+  // Extends the Adaptive theme that ships with Sublime Text 4, so this
+  // theme has no package dependencies. Adaptive derives its chrome from
+  // the active color scheme's "background", "foreground" and "accent"
+  // globals, exposed to themes as --background / --foreground / --accent.
+  // Gold Rose.sublime-color-scheme sets all three, so the defaults land
+  // close already; the rules below pin the parts Adaptive would otherwise
+  // compute by blending --background toward black or white.
+  "extends": "Adaptive.sublime-theme",
 
   "variables": {
     "gold_rose_bg": "#1a1416",
@@ -13,26 +17,22 @@
     "gold_rose_fg_dim": "#c9a0a6",
     "gold_rose_border": "#4a3238",
 
-    // Nudge GitHub's derived chrome toward the warm Gold Rose tones.
-    "sidebarBackground": "var(gold_rose_bg)",
-    "tabInactiveBackground": "var(gold_rose_bg_lighter)",
-    "statusBarBackground": "var(gold_rose_bg_lighter)",
-    "panelControlBackground": "var(gold_rose_bg_lighter)",
-    "treeActiveSelectionBackground": "var(gold_rose_border)",
-    "panelRowSelectedBackground": "var(gold_rose_border)"
+    // Adaptive blends these four from --background and picks between them
+    // by window lightness. Gold Rose's background is dark, so "dark_bg" is
+    // the one in play; the others are pinned for consistency.
+    "dark_bg": "var(gold_rose_bg)",
+    "medium_dark_bg": "var(gold_rose_bg)",
+    "medium_bg": "var(gold_rose_bg)",
+    "light_bg": "var(gold_rose_bg)"
   },
 
   "rules": [
+    // Side bar. Adaptive tints sidebar_container per window lightness, so
+    // pin it here rather than relying on the dark_bg variable alone.
     {
-      "class": "tab_control",
-      "attributes": ["selected"],
-      "layer0.tint": "var(gold_rose_accent)"
-    },
-    {
-      "class": "tab_label",
-      "parents": [{"class": "tab_control", "attributes": ["selected"]}],
-      "fg": "var(gold_rose_bg)",
-      "font.bold": true
+      "class": "sidebar_container",
+      "layer0.tint": "var(gold_rose_bg)",
+      "layer0.opacity": 1.0
     },
     {
       "class": "sidebar_heading",
@@ -40,8 +40,77 @@
     },
     {
       "class": "sidebar_label",
-      "attributes": ["hover"],
+      "color": "var(gold_rose_fg_dim)"
+    },
+    // Adaptive puts hover/selected state on tree_row, not sidebar_label.
+    {
+      "class": "sidebar_label",
+      "parents": [{"class": "tree_row", "attributes": ["hover"]}],
       "color": "var(gold_rose_accent_bright)"
+    },
+    {
+      "class": "sidebar_label",
+      "parents": [{"class": "tree_row", "attributes": ["selected"]}],
+      "color": "var(gold_rose_fg)"
+    },
+    {
+      "class": "tree_row",
+      "attributes": ["selected"],
+      "layer0.tint": "var(gold_rose_border)",
+      "layer0.opacity": 1.0
+    },
+    {
+      "class": "tree_row",
+      "attributes": ["selectable", "hover"],
+      "layer0.tint": "var(gold_rose_bg_lighter)",
+      "layer0.opacity": 1.0
+    },
+
+    // Tabs. In Adaptive's default rounded style an unselected tab is
+    // transparent and shows the tabset through it, so the tabset tint is
+    // what an inactive tab actually looks like.
+    {
+      "class": "tabset_control",
+      "layer0.tint": "var(gold_rose_bg_lighter)",
+      "layer0.opacity": 1.0
+    },
+    {
+      "class": "tab_control",
+      "attributes": ["selected"],
+      "layer1.tint": "var(gold_rose_accent)",
+      "layer1.opacity": 1.0,
+      "tint_index": -1
+    },
+    {
+      "class": "tab_label",
+      "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+      "fg": "var(gold_rose_bg)",
+      "font.bold": true
+    },
+
+    // Status bar and panels. Adaptive blends these from --background
+    // independently of dark_bg, so they need explicit rules.
+    {
+      "class": "status_bar",
+      "layer0.tint": "var(gold_rose_bg_lighter)",
+      "layer0.opacity": 1.0
+    },
+    {
+      "class": "panel_control",
+      "layer0.tint": "var(gold_rose_bg_lighter)",
+      "layer0.opacity": 1.0
+    },
+    {
+      "class": "panel_row",
+      "attributes": ["selected"],
+      "layer0.tint": "var(gold_rose_border)",
+      "layer0.opacity": 1.0
+    },
+    {
+      "class": "quick_panel_row",
+      "attributes": ["selected"],
+      "layer0.tint": "var(gold_rose_border)",
+      "layer0.opacity": 1.0
     }
   ]
 }

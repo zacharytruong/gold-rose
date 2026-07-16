@@ -13,9 +13,18 @@ long sessions, with just enough color variety to keep syntax readable.
 ## Requirements
 
 - Sublime Text 4 (build 4050+).
-- The **theme** extends [`GitHub Theme`](https://packagecontrol.io/packages/GitHub%20Theme)
-  (`GitHub Adaptive.sublime-theme`). Install that package too if you want to use
-  the UI theme. The **color scheme works on its own** and needs no dependency.
+
+Nothing else. The theme extends `Adaptive.sublime-theme`, which ships with
+Sublime Text, so both files work on a stock install.
+
+### Optional: nicer file icons
+
+Sublime ships seven generic file-type icons, so `.py`, `.rs` and `.go` all fall
+into the same coarse "source" bucket. Installing
+[`A File Icon`](https://packagecontrol.io/packages/A%20File%20Icon) gives every
+language its own icon. It detects the active theme and patches itself in — no
+configuration needed. Folder icons are built into Sublime and look the same
+either way.
 
 ## Installation
 
@@ -33,8 +42,7 @@ Clone or copy this repository into your Sublime Text `Packages/User` directory
 ## Activating
 
 - **Color scheme:** **Preferences → Select Color Scheme…** → `Gold Rose`.
-- **UI theme:** **Preferences → Select Theme…** → `Gold Rose`
-  (requires the *GitHub Theme* package, see Requirements).
+- **UI theme:** **Preferences → Select Theme…** → `Gold Rose`.
 
 ## Palette
 

@@ -3,8 +3,11 @@ Thanks for installing Gold Rose!
 Activate the color scheme:
   Preferences → Select Color Scheme… → Gold Rose
 
-Activate the UI theme (optional):
+Activate the UI theme:
   Preferences → Select Theme… → Gold Rose
 
-Note: the UI theme extends the "GitHub Theme" package. Install that package
-too if you want the matching window chrome. The color scheme works on its own.
+Both work on a stock Sublime Text 4 install with no other packages.
+
+Optional: install "A File Icon" via Package Control for per-language file
+icons in the sidebar. Gold Rose looks fine without it — you just get
+Sublime's generic icons instead.
