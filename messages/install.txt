@@ -1,0 +1,10 @@
+Thanks for installing Gold Rose!
+
+Activate the color scheme:
+  Preferences → Select Color Scheme… → Gold Rose
+
+Activate the UI theme (optional):
+  Preferences → Select Theme… → Gold Rose
+
+Note: the UI theme extends the "GitHub Theme" package. Install that package
+too if you want the matching window chrome. The color scheme works on its own.

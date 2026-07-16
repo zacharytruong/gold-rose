@@ -1,0 +1,47 @@
+{
+  // Inherit GitHub Theme's full UI + file-type / symbol icons.
+  // Colors flow from the Gold Rose color scheme, which exports
+  // --background (#1a1416), --foreground (#e6bfa8) and --accent (#B76E79).
+  "extends": "GitHub Adaptive.sublime-theme",
+
+  "variables": {
+    "gold_rose_bg": "#1a1416",
+    "gold_rose_bg_lighter": "#2a2024",
+    "gold_rose_accent": "#B76E79",
+    "gold_rose_accent_bright": "#d18a94",
+    "gold_rose_fg": "#e6bfa8",
+    "gold_rose_fg_dim": "#c9a0a6",
+    "gold_rose_border": "#4a3238",
+
+    // Nudge GitHub's derived chrome toward the warm Gold Rose tones.
+    "sidebarBackground": "var(gold_rose_bg)",
+    "tabInactiveBackground": "var(gold_rose_bg_lighter)",
+    "statusBarBackground": "var(gold_rose_bg_lighter)",
+    "panelControlBackground": "var(gold_rose_bg_lighter)",
+    "treeActiveSelectionBackground": "var(gold_rose_border)",
+    "panelRowSelectedBackground": "var(gold_rose_border)"
+  },
+
+  "rules": [
+    {
+      "class": "tab_control",
+      "attributes": ["selected"],
+      "layer0.tint": "var(gold_rose_accent)"
+    },
+    {
+      "class": "tab_label",
+      "parents": [{"class": "tab_control", "attributes": ["selected"]}],
+      "fg": "var(gold_rose_bg)",
+      "font.bold": true
+    },
+    {
+      "class": "sidebar_heading",
+      "color": "var(gold_rose_accent)"
+    },
+    {
+      "class": "sidebar_label",
+      "attributes": ["hover"],
+      "color": "var(gold_rose_accent_bright)"
+    }
+  ]
+}

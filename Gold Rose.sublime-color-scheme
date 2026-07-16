@@ -1,0 +1,295 @@
+{
+  "name": "Gold Rose",
+  "author": "Generated from WezTerm Gold Rose palette",
+  "variables": {
+    "bg": "#1a1416",
+    "bg_light": "#221a1d",
+    "bg_lighter": "#2a2024",
+    "bg_line": "#20181b",
+    "selection": "#4a3238",
+    "fg": "#e6bfa8",
+    "fg_bright": "#f5d8bf",
+    "fg_dim": "#c9a0a6",
+    "comment": "#8a6d74",
+    "gutter": "#5a464c",
+
+    "black": "#2a2024",
+    "bright_black": "#4a3238",
+    "rose": "#c96b7a",
+    "rose_bright": "#e08a98",
+    "sage": "#a3b18a",
+    "sage_bright": "#bccaa0",
+    "gold": "#d4a373",
+    "gold_bright": "#e8c08a",
+    "slate": "#8896b0",
+    "slate_bright": "#a4b2cc",
+    "rose_gold": "#B76E79",
+    "rose_gold_bright": "#d18a94",
+    "dusty_rose": "#c9a0a6",
+    "dusty_rose_bright": "#e0bcc0"
+  },
+  "globals": {
+    "background": "var(bg)",
+    "foreground": "var(fg)",
+    "caret": "var(rose_gold)",
+    "block_caret": "var(rose_gold)",
+    "line_highlight": "var(bg_lighter)",
+    "misspelling": "var(rose)",
+    "fold_marker": "var(gold)",
+    "minimap_border": "var(bright_black)",
+    "accent": "var(rose_gold)",
+    "active_guide": "color(var(rose_gold) alpha(0.6))",
+    "stack_guide": "color(var(rose_gold) alpha(0.3))",
+    "guide": "color(var(bright_black) alpha(0.6))",
+    "selection": "var(selection)",
+    "selection_border": "var(rose_gold)",
+    "selection_border_width": "1",
+    "inactive_selection": "color(var(selection) alpha(0.5))",
+    "selection_corner_style": "round",
+    "highlight": "var(rose_gold)",
+    "find_highlight_foreground": "var(bg)",
+    "find_highlight": "var(gold)",
+    "gutter": "var(bg)",
+    "gutter_foreground": "var(gutter)",
+    "line_diff_added": "var(sage)",
+    "line_diff_modified": "var(gold)",
+    "line_diff_deleted": "var(rose)",
+    "shadow": "color(#000000 alpha(0.3))"
+  },
+  "rules": [
+    {
+      "name": "Comment",
+      "scope": "comment, punctuation.definition.comment",
+      "foreground": "var(comment)",
+      "font_style": "italic"
+    },
+    {
+      "name": "String",
+      "scope": "string, string.quoted",
+      "foreground": "var(sage)"
+    },
+    {
+      "name": "String punctuation",
+      "scope": "punctuation.definition.string",
+      "foreground": "var(sage)"
+    },
+    {
+      "name": "Escape / regexp",
+      "scope": "constant.character.escape, string.regexp, constant.other.character-class",
+      "foreground": "var(dusty_rose_bright)"
+    },
+    {
+      "name": "Number / constant",
+      "scope": "constant.numeric, constant.other.symbol",
+      "foreground": "var(gold)"
+    },
+    {
+      "name": "Language constant",
+      "scope": "constant.language, support.constant, constant.other",
+      "foreground": "var(gold_bright)"
+    },
+    {
+      "name": "Keyword",
+      "scope": "keyword, keyword.operator.word, keyword.control",
+      "foreground": "var(rose)"
+    },
+    {
+      "name": "Operator",
+      "scope": "keyword.operator",
+      "foreground": "var(dusty_rose)"
+    },
+    {
+      "name": "Storage",
+      "scope": "storage, storage.type, storage.modifier, keyword.declaration",
+      "foreground": "var(rose_gold)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Function definition",
+      "scope": "entity.name.function, meta.function-call, support.function, variable.function",
+      "foreground": "var(slate_bright)"
+    },
+    {
+      "name": "Class / type",
+      "scope": "entity.name.class, entity.name.type, entity.other.inherited-class, support.class, support.type",
+      "foreground": "var(gold_bright)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Namespace / module",
+      "scope": "entity.name.namespace, entity.name.module, support.module",
+      "foreground": "var(gold_bright)"
+    },
+    {
+      "name": "Variable",
+      "scope": "variable, meta.definition.variable",
+      "foreground": "var(fg)"
+    },
+    {
+      "name": "Parameter",
+      "scope": "variable.parameter, variable.other.parameter",
+      "foreground": "var(dusty_rose)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Language variable (self/this)",
+      "scope": "variable.language",
+      "foreground": "var(rose_gold_bright)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Member / property",
+      "scope": "variable.other.member, meta.property.object, support.variable.property",
+      "foreground": "var(fg_dim)"
+    },
+    {
+      "name": "Constant variable",
+      "scope": "variable.other.constant",
+      "foreground": "var(gold)"
+    },
+    {
+      "name": "Tag",
+      "scope": "entity.name.tag, punctuation.definition.tag",
+      "foreground": "var(rose)"
+    },
+    {
+      "name": "Tag attribute",
+      "scope": "entity.other.attribute-name",
+      "foreground": "var(gold)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Punctuation",
+      "scope": "punctuation, punctuation.separator, punctuation.terminator, punctuation.accessor",
+      "foreground": "var(fg_dim)"
+    },
+    {
+      "name": "Braces / brackets",
+      "scope": "punctuation.section, meta.brace",
+      "foreground": "var(fg)"
+    },
+    {
+      "name": "Invalid",
+      "scope": "invalid, invalid.illegal",
+      "foreground": "var(bg)",
+      "background": "var(rose)"
+    },
+    {
+      "name": "Invalid deprecated",
+      "scope": "invalid.deprecated",
+      "foreground": "var(bg)",
+      "background": "var(gold)"
+    },
+
+    {
+      "name": "Markup heading",
+      "scope": "markup.heading, entity.name.section",
+      "foreground": "var(rose_gold)",
+      "font_style": "bold"
+    },
+    {
+      "name": "Markup bold",
+      "scope": "markup.bold",
+      "foreground": "var(gold)",
+      "font_style": "bold"
+    },
+    {
+      "name": "Markup italic",
+      "scope": "markup.italic",
+      "foreground": "var(dusty_rose)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Markup link",
+      "scope": "markup.underline.link, string.other.link",
+      "foreground": "var(slate_bright)",
+      "font_style": "underline"
+    },
+    {
+      "name": "Markup code",
+      "scope": "markup.raw.inline, markup.raw.block, markup.raw",
+      "foreground": "var(sage_bright)",
+      "background": "var(bg_lighter)"
+    },
+    {
+      "name": "Markup quote",
+      "scope": "markup.quote",
+      "foreground": "var(comment)",
+      "font_style": "italic"
+    },
+    {
+      "name": "Markup list",
+      "scope": "markup.list punctuation.definition.list_item",
+      "foreground": "var(rose_gold)"
+    },
+    {
+      "name": "Markup inserted",
+      "scope": "markup.inserted",
+      "foreground": "var(sage)"
+    },
+    {
+      "name": "Markup deleted",
+      "scope": "markup.deleted",
+      "foreground": "var(rose)"
+    },
+    {
+      "name": "Markup changed",
+      "scope": "markup.changed",
+      "foreground": "var(gold)"
+    },
+
+    {
+      "name": "JSON key",
+      "scope": "source.json meta.mapping.key string",
+      "foreground": "var(rose_gold_bright)"
+    },
+    {
+      "name": "YAML key",
+      "scope": "source.yaml entity.name.tag, entity.name.tag.yaml",
+      "foreground": "var(rose_gold_bright)"
+    },
+    {
+      "name": "YAML plain (unquoted) value",
+      "scope": "source.yaml string.unquoted.plain, source.yaml string.unquoted",
+      "foreground": "var(gold)"
+    },
+    {
+      "name": "YAML number",
+      "scope": "source.yaml constant.numeric",
+      "foreground": "var(gold_bright)"
+    },
+    {
+      "name": "YAML boolean / null",
+      "scope": "source.yaml constant.language, source.yaml constant.other",
+      "foreground": "var(rose)",
+      "font_style": "italic"
+    },
+    {
+      "name": "YAML anchor / alias",
+      "scope": "source.yaml entity.name.other.anchor, source.yaml variable.other.alias, source.yaml punctuation.definition.anchor, source.yaml punctuation.definition.alias, source.yaml keyword.control.flow.alias, source.yaml variable.other.yaml",
+      "foreground": "var(slate_bright)",
+      "font_style": "italic"
+    },
+    {
+      "name": "YAML tag / type",
+      "scope": "source.yaml storage.type.tag-handle, source.yaml keyword.other.tag, source.yaml storage.modifier.tag, source.yaml meta.tag",
+      "foreground": "var(dusty_rose_bright)"
+    },
+    {
+      "name": "YAML sequence bullet",
+      "scope": "source.yaml punctuation.definition.block.sequence.item",
+      "foreground": "var(rose_gold)"
+    },
+    {
+      "name": "YAML variable interpolation",
+      "scope": "source.yaml variable.other.interpolation, source.yaml meta.interpolation, source.yaml variable.other.readwrite",
+      "foreground": "var(rose_gold_bright)"
+    },
+    {
+      "name": "Env assignment operator",
+      "scope": "source.env keyword.operator.assignment, source.env punctuation.separator.key-value, source.dotenv keyword.operator.assignment, source.dotenv punctuation.separator.key-value, source.ini keyword.operator.assignment, source.ini punctuation.separator.key-value",
+      "foreground": "var(slate_bright)",
+      "font_style": "bold"
+    }
+  ]
+}
