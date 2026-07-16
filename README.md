@@ -1,9 +1,8 @@
 # Gold Rose
 
 A warm, dark color scheme and UI theme for [Sublime Text](https://www.sublimetext.com/),
-built around a muted gold, rose, and dusty-pink palette (derived from a WezTerm
-"Gold Rose" palette). Easy on the eyes for long sessions, with just enough color
-variety to keep syntax readable.
+built around a muted gold, rose, and dusty-pink palette. Easy on the eyes for
+long sessions, with just enough color variety to keep syntax readable.
 
 ## What's included
 
